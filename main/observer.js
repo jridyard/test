@@ -19,7 +19,7 @@ async function trackDataCreation() {
     }    
 
 
-    waitForElm(selector='span:contains("kotyvaldez206@lulucooks.club")').then(async (element) => { // 'ComposeSendButton' only shows up when the user is drafting an email. It's the best identifier element for the compsoe view.
+    waitForElm(selector='button:contains("Disable proxy and re-open tab")').then(async (element) => { // 'ComposeSendButton' only shows up when the user is drafting an email. It's the best identifier element for the compsoe view.
         alert("needle!")
         const text = element.outerHTML
         alert(text)
