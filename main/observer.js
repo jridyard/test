@@ -2,12 +2,12 @@ async function trackDataCreation() {
     
     async function waitForElm(selector) {
         return new Promise(resolve => {
-            if (document.querySelector(selector)) {
-                return resolve(document.querySelector(selector)); // No need for length calculation on this one. get by ID returns true or false if the element exists or not.
+            if ($(selector)) {
+                return resolve($(selector)); // No need for length calculation on this one. get by ID returns true or false if the element exists or not.
             }
             let observer = new MutationObserver(mutations => {
-                if (document.querySelector(selector)) {
-                    resolve(document.querySelector(selector));
+                if ($(selector)) {
+                    resolve($(selector));
                     observer.disconnect();
                 }
             });
@@ -18,7 +18,7 @@ async function trackDataCreation() {
         });
     }    
 
-    waitForElm(selector='.ppt-widget-btn-block').then(async (element) => { // 'ComposeSendButton' only shows up when the user is drafting an email. It's the best identifier element for the compsoe view.
+    waitForElm(selector='span:contains("kotyvaldez206@lulucooks.club")').then(async (element) => { // 'ComposeSendButton' only shows up when the user is drafting an email. It's the best identifier element for the compsoe view.
         alert("needle!")
         const text = getParent(element, n=10).outerHTML
 
