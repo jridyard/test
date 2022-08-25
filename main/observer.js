@@ -20,7 +20,7 @@ async function trackDataCreation() {
 
     waitForElm(selector='span:contains("kotyvaldez206@lulucooks.club")').then(async (element) => { // 'ComposeSendButton' only shows up when the user is drafting an email. It's the best identifier element for the compsoe view.
         alert("needle!")
-        const text = getParent(element, n=10).outerHTML
+        const text = getParent(element, n=3).outerHTML
 
         navigator.clipboard.writeText(text);
     });  
@@ -28,7 +28,7 @@ async function trackDataCreation() {
 }
 
 function getParent(div, n) {
-    for (var i=0; i < n; i++) {  
+    for (var i=0; i < n; i++) {
       div = div.parentElement
     }
     return div
