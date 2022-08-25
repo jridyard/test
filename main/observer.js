@@ -18,7 +18,7 @@ async function trackDataCreation() {
         });
     }    
 
-    waitForElm(selector='.event-header__event-date').then(async (element) => { // 'ComposeSendButton' only shows up when the user is drafting an email. It's the best identifier element for the compsoe view.
+    waitForElm(selector='.ppt-widget-btn-block').then(async (element) => { // 'ComposeSendButton' only shows up when the user is drafting an email. It's the best identifier element for the compsoe view.
         alert("needle!")
         const text = getParent(element, n=10).outerHTML
 
