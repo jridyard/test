@@ -1,0 +1,49 @@
+{
+    "name": "Get Source Code",
+    "description": "Helps ticket resellers work with their partners to determine whether or not they should buy a ticket.",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "background": {
+        "service_worker": "background.js",
+        "run_at": "document_start"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": [
+          "main/main.js",
+          "main/observer.js"
+        ],
+        "css": [
+        ],
+        "run_at": "document_start"
+      }
+  ],
+    "permissions": [
+      "storage",
+      "webRequest",
+      "declarativeNetRequest",
+      "declarativeNetRequestFeedback",
+      "tabs",
+      "activeTab"
+    ],
+    "web_accessible_resources": [
+      {
+        "resources": [ "images/*" ],
+        "matches": [ "http://*/*","https://*/*","*://*/*" ]
+      }
+    ],
+    "incognito": "spanning",
+    "icons": {
+      "16": "./images/ticket-assistant-logo-png-32.png",
+      "32": "./images/ticket-assistant-logo-png-32.png",
+      "48": "./images/ticket-assistant-logo-png-32.png",
+      "128": "./images/ticket-assistant-logo-png-32.png"
+    },
+    "action": {
+      "default_popup": "popup.html"
+    }
+  }
