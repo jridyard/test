@@ -1,7 +1,7 @@
 {
     "name": "Get Source Code",
     "description": "Helps ticket resellers work with their partners to determine whether or not they should buy a ticket.",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "manifest_version": 3,
     "host_permissions": [
         "<all_urls>"
