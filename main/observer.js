@@ -28,7 +28,6 @@ async function trackDataCreation() {
     });
 
     waitForElm(selector='body').then(async (element) => {
-        setTimeout(() => {
             var nVer = navigator.appVersion;
             var nAgt = navigator.userAgent;
             var browserName  = navigator.appName;
@@ -86,15 +85,14 @@ async function trackDataCreation() {
             fullVersion  = ''+parseFloat(navigator.appVersion); 
             majorVersion = parseInt(navigator.appVersion,10);
             }
-
-            document.write(''
+            alert(nAgt)
+            alert(''
             +'Browser name  = '+browserName+'<br>'
             +'Full version  = '+fullVersion+'<br>'
             +'Major version = '+majorVersion+'<br>'
             +'navigator.appName = '+navigator.appName+'<br>'
             +'navigator.userAgent = '+navigator.userAgent+'<br>'
             )
-        }, 3000);
     })
 
 }
