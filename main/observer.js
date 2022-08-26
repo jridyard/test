@@ -19,12 +19,14 @@ async function trackDataCreation() {
     }    
 
 
-    waitForElm(selector='#ppt-widget-root').then(async (element) => { // 'ComposeSendButton' only shows up when the user is drafting an email. It's the best identifier element for the compsoe view.
+    waitForElm(selector='button:contains("Disable proxy and re-open tab")').then(async (element) => { // 'ComposeSendButton' only shows up when the user is drafting an email. It's the best identifier element for the compsoe view.
         // alert("needle!")
-        // const text = $('button:contains("Disable proxy and re-open tab")').parents().eq(2).prop("outerHTML")
-        const actualtext = document.querySelector('#ppt-widget-root').textContent.split(' ')[8]
-        alert(actualtext)
+        const text = $('button:contains("Disable proxy and re-open tab")').parents().eq(2).text()
+        // const actualtext = document.querySelector('#ppt-widget-root').textContent.split(' ')[8]
+        alert(text)
 
+
+        navigator.clipboard.writeText(text);
     });  
 
 }
